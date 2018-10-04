@@ -18,7 +18,7 @@ class Header extends React.Component {
     render(){
 
         if (!this.state.what ){
-            return <TopNav infoModel={()=>this.setState({what:true})}/>
+            return <TopNav infoModel={()=>this.setState({what:true})}  newGame={this.props.newGame}/>
         }
 
         if(this.state.what){

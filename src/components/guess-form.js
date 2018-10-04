@@ -5,11 +5,12 @@ import './guess-form.css';
 export default function GuessForm (props){
   
         return (
-            <form onSubmit={props.submit}>
-                <input type="text" name="userGuess" id="userGuess"
+           
+            <form name='janet' onSubmit={props.submit}>
+
+                <input type="text" maxLength='3' name="userGuess" id="userGuess"
                     className="text" maxLength="3" autoComplete="off"
-                    placeholder="Enter your Guess" required ref={props.InputValue}/>
-    
+                    placeholder={props.placehold} required />
                 <input type="submit" id="guessButton" className="button" name="submit" value="Guess"/>
             </form>
         );
