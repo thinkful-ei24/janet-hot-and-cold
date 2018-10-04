@@ -5,12 +5,28 @@ import InfoModal from './info-modal';
 
 import './header.css';
 
-export default function Header(props) {
-    return (
-        <header>
-            <TopNav />
-            {/* <InfoModal /> */}
-            <h1>HOT or COLD</h1>
-        </header>
-    );
+class Header extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            what: false,
+
+        }
+    }
+    
+    render(){
+
+        if (!this.state.what ){
+            return <TopNav infoModel={()=>this.setState({what:true})}/>
+        }
+
+        if(this.state.what){
+            return <InfoModal  gotIt={()=>this.setState({what:false})}/>
+        }
+
+     
+    }
 };
+
+export default Header
